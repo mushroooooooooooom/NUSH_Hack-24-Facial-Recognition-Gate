@@ -3,22 +3,21 @@ import numpy as np
 import cv2
 import pandas as pd
 
-cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture(0)
 
+# while True:
+#     ret, frame = cap.read()
+
+#     filename = "Frame.png"
+#     cv2.imwrite(filename, frame)
+
+#     cv2.imshow("Frame", frame)
+    
 while True:
-    ret, frame = cap.read()
-
-    filename = "Frame.png"
-    cv2.imwrite(filename, frame)
-
-    cv2.imshow("Frame", frame)
-    
-
     if cv2.waitKey(1) == ord("q"):
-        break
-    
+         break
     result = DeepFace.find(
-    img_path = frame,
+    img_path = "image/jpeg",
     db_path = "db",
     model_name="VGG-Face", 
     distance_metric="cosine", 
@@ -29,9 +28,11 @@ while True:
         if not match_df.empty:
             pass
         print(match_df['identity'])
-        print(str(match_df['identity'][0]))[2:8]
-        break
+        x = str(match_df['identity'][0])
+        print(x[3:8])
+
+        
     
 
-cap.release()
-cv2.destroyAllWindows()
+
+
