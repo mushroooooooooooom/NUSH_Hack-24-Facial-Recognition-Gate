@@ -24,6 +24,7 @@ MIT License
   url          = {https://ieeexplore.ieee.org/document/9259802},
   organization = {IEEE}
 }
+
 License to use deepface for our project
 
 Copyright (c) 2019 Sefik Ilkin Serengil
